@@ -1,25 +1,257 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <title>JCss</title>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jcss.js"></script>
 <style>
 * {
 	margin: 0;
 	padding: 0;
 }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 80%;
+	margin: auto;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+table th, table td {
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	text-align: center;
+	padding: 10px;
+}
 </style>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/JCss.js"></script>
 </head>
 <body>
-<p class="mb-1">Class mb-1</p>
-<p class="mb-5">Class mb-5</p>
-<p class="mg-10">Class mg-10</p>
-<p class="ml-20">Class ml-20</p>
-<p class="mr-abc">Class mr-abc</p>
-<p class="ml-30-mr-40-fw-bold">ml-30-mr-40</p>
-<p class="ml-14 mr-13 fz-50 mg-auto">ml-14 mr-13 fz-50</p>
-<p class="mg-auto w-500 po-absolute l-300">mg-auto w-500 po-absolute l-300</p>
+<h1 class="ta_center cl_#333 bg_#ddd pd_10 mb_40" onClick="doJCss()" >JCss</h1>
+<h2 class="ta_center mb_20">Top Used</h2>
+<table class="mb_40">
+  <tr>
+    <th class="col1" scope="col">Properties</th>
+    <th class="col2" scope="col">Sort code</th>
+    <th class="col3" scope="col">Code example</th>
+    <th class="col4" scope="col">View</th>
+  </tr>
+  <tr>
+    <th scope="row">font-size</th>
+    <td>fs</td>
+    <td><p>&lt;div class="fs_xx-large"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fs_50"&gt;&lt;/div&gt;</p></td>
+    <td><div class="fs_xx-large"> style = "font-size:xx-large" </div>
+      <div class="fs_50"> style = "font-size:50" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">font-weight</th>
+    <td>fw</td>
+    <td><p>&lt;div class="fw_lighter"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fw_900"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fw_bold"&gt;&lt;/div&gt;</p></td>
+    <td><div class="fw_lighter"> style = "font-weight:lighter" </div>
+      <div class="fw_900"> style = "font-weight:900" </div>
+      <div class="fw_bold"> style = "font-weight:bold" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-align</th>
+    <td>ta</td>
+    <td><p>&lt;div class="ta_right"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="ta_left"&gt;&lt;/div&gt;</p></td>
+    <td><div class="ta_right"> style = "text-align:right" </div>
+      <div class="ta_left"> style = "text-align:left" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">letter-spacing</th>
+    <td>ls</td>
+    <td><p>&lt;div class="ls_2"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="ls_0.5em"&gt;&lt;/div&gt;</p></td>
+    <td><div class="ls_2"> style = "letter-spacing:2" </div>
+      <div class="ls_0.5em"> style = "letter-spacing:0.5em" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">word-spacing</th>
+    <td>wos</td>
+    <td><p>&lt;div class="wos_2"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="wos_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="wos_2"> style = "word-spacing:2" </div>
+      <div class="wos_10"> style = "word-spacing:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">margin</th>
+    <td>mg</td>
+    <td><p>&lt;div class="mg_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="mg_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="mg_30"> style = "margin:30" </div>
+      <div class="mg_10"> style = "margin:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">margin-left</th>
+    <td>ml</td>
+    <td><p>&lt;div class="ml_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="ml_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="ml_30"> style = "margin-left:30" </div>
+      <div class="ml_10"> style = "margin-left:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">margin-right</th>
+    <td>mr</td>
+    <td><p>&lt;div class="mr_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="mr_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="mr_30"> style = "margin-right:30" </div>
+      <div class="mr_10"> style = "margin-right:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">margin-top</th>
+    <td>mt</td>
+    <td><p>&lt;div class="mt_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="mt_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="mt_30"> style = "margin-top:30" </div>
+      <div class="mt_10"> style = "margin-top:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">margin-bottom</th>
+    <td>mb</td>
+    <td><p>&lt;div class="mb_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="mb_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="mb_30"> style = "margin-bottom:30" </div>
+      <div class="mb_10"> style = "margin-bottom:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">padding</th>
+    <td>pd</td>
+    <td><p>&lt;div class="pd_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="pd_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="pd_30"> style = "padding:30" </div>
+      <div class="pd_10"> style = "padding:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">padding-left</th>
+    <td>pl</td>
+    <td><p>&lt;div class="pl_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="pl_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="pl_30"> style = "padding-left:30" </div>
+      <div class="pl_10"> style = "padding-left:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">padding-right</th>
+    <td>pr</td>
+    <td><p>&lt;div class="pr_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="pr_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="pr_30"> style = "padding-right:30" </div>
+      <div class="pr_10"> style = "padding-right:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">padding-top</th>
+    <td>pt</td>
+    <td><p>&lt;div class="pt_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="pt_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="pt_30"> style = "padding-top:30" </div>
+      <div class="pt_10"> style = "padding-top:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">padding-bottom</th>
+    <td>pb</td>
+    <td><p>&lt;div class="pb_30"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="pb_10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="pb_30"> style = "padding-bottom:30" </div>
+      <div class="pb_10"> style = "padding-bottom:10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">background-color</th>
+    <td>bg</td>
+    <td><p>&lt;div class="bg_#ff0000"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="bg_#00ff00"&gt;&lt;/div&gt;</p></td>
+    <td><div class="bg_#ff0000"> style = "background-color:#ff0000" </div>
+      <div class="bg_#00ff00"> style = "background-color:#00ff00" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">font-style</th>
+    <td>fst</td>
+    <td><p>&lt;div class="fst_italic"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fst_oblique"&gt;&lt;/div&gt;</p></td>
+    <td><div class="fst_italic"> style = "font-style:italic" </div>
+      <div class="fst_oblique"> style = "font-style:oblique" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-decoration</th>
+    <td>td</td>
+    <td><p>&lt;div class="td_overline"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="td_line-through"&gt;&lt;/div&gt;</p></td>
+    <td><div class="td_overline"> style = "text-decoration:overline" </div>
+      <div class="td_line-through"> style = "text-decoration:line-through" </div></td>
+  </tr>
+</table>
+<h2 class="ta_center mb_20">Other</h2>
+<table class="mb_40">
+  <tr>
+    <th class="col1" scope="col">Properties</th>
+    <th class="col2" scope="col">Sort code</th>
+    <th class="col3" scope="col">Code example</th>
+    <th class="col4" scope="col">View</th>
+  </tr>
+  <tr>
+    <th scope="row">font-stretch</th>
+    <td>fstr</td>
+    <td><p>&lt;div class="fstr_extra-expanded"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fstr_narrower"&gt;&lt;/div&gt;</p></td>
+    <td><div class="fstr_extra-expanded"> style = "font-stretch:extra-expanded" </div>
+      <div class="fstr_narrower"> style = "font-stretch:narrower" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">font-variant</th>
+    <td>fv</td>
+    <td><p>&lt;div class="fv_small-caps"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="fv_normal"&gt;&lt;/div&gt;</p></td>
+    <td><div class="fv_small-caps"> style = "font-variant:small-caps" </div>
+      <div class="fv_normal"> style = "font-variant:normal" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">white-space</th>
+    <td>whs</td>
+    <td><p>&lt;div class="whs_pre-line"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="whs_pre"&gt;&lt;/div&gt;</p></td>
+    <td><div class="whs_pre-line"> style = "white-space:pre-line" </div>
+      <div class="whs_pre"> style = "white-space:pre" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">word-wrap</th>
+    <td>ww</td>
+    <td><p>&lt;div class="ww_break-word"&gt;&lt;/div&gt;</p></td>
+    <td><div class="ww_break-word"> style = "word-wrap:break-word" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-align-last</th>
+    <td>tal</td>
+    <td><p>&lt;div class="tal_right"&gt;&lt;/div&gt;</p></td>
+    <td><div class="tal_right"> style = "text-align-last:right" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-transform</th>
+    <td>tt</td>
+    <td><p>&lt;div class="tt_uppercase"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="tt_capitalize"&gt;&lt;/div&gt;</p></td>
+    <td><div class="tt_uppercase"> style = "text-transform:uppercase" </div>
+      <div class="tt_capitalize"> style = "text-transform:capitalize" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-indent</th>
+    <td>ti</td>
+    <td><p>&lt;div class="ti_2"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="ti_-10"&gt;&lt;/div&gt;</p></td>
+    <td><div class="ti_2"> style = "text-indent:2" </div>
+      <div class="ti_-10"> style = "text-indent:-10" </div></td>
+  </tr>
+  <tr>
+    <th scope="row">text-underline-position</th>
+    <td>tup</td>
+    <td><p>&lt;div class="tup_above"&gt;&lt;/div&gt;</p>
+      <p>&lt;div class="tup_below"&gt;&lt;/div&gt;</p></td>
+    <td><div class="tup_above"> style = "text-underline-position:above" </div>
+      <div class="tup_below"> style = "text-underline-position:below" </div></td>
+  </tr>
+</table>
 </body>
 </html>
